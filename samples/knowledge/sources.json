@@ -1,0 +1,20 @@
+[
+  {
+    "filename": "01-who-handwashing.pdf",
+    "title": "WHO：How to Handwash?",
+    "url": "https://www.who.int/docs/default-source/sepsis/how-to-handwash-poster.pdf",
+    "pages_verified_online": 1
+  },
+  {
+    "filename": "02-nasa-sun.pdf",
+    "title": "NASA：Our Star — The Sun",
+    "url": "https://www.nasa.gov/wp-content/uploads/2009/12/Sun_Lithograph.pdf",
+    "pages_verified_online": 2
+  },
+  {
+    "filename": "03-cfs-food-safety.pdf",
+    "title": "香港食物安全中心：食物安全五要點·家居指南",
+    "url": "https://www.cfs.gov.hk/tc_chi/multimedia/multimedia_pub/files/FS_5keys_practical_tips_public.pdf",
+    "pages_verified_online": 24
+  }
+]
