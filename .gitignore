@@ -133,7 +133,7 @@ next-env.d.ts
 .DS_Store
 Thumbs.db
 Desktop.ini
-*.png
+
 
 # Intentionally retained: source code, docs, .env.example, requirements*.txt,
 # package-lock.json, samples/project-facts.pdf, and small meeting TXT fixtures.
