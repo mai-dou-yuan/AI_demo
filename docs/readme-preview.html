@@ -1,0 +1,151 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="../"><title>Cortex README 排版预览</title><style>body{margin:0;background:#fff;color:#1f2328;font-family:sans-serif;font-size:15px;line-height:1.7}article{max-width:920px;margin:0 auto;padding:40px 42px}h1{font-size:38px;margin:0 0 12px;font-weight:700}h2{font-size:23px;margin:30px 0 16px;padding-bottom:8px;border-bottom:1px solid #d8dee4}p{margin:12px 0 16px}a{color:#0969da;text-decoration:none}img{max-width:100%;height:auto}pre{padding:16px;background:#f6f8fa;border-radius:6px;font-size:13px;line-height:1.5;white-space:pre-wrap}code{font-family:monospace}hr{border:0;border-top:1px solid #d8dee4;margin:24px 0}summary,.preview-disclosure{font-size:14px;padding:10px 0;color:#1f2328}details{margin:3px 0}sub{color:#656d76;font-size:12px}li{margin:6px 0}[align=center]{text-align:center}</style></head><body><article><h1 align="center">Cortex</h1>
+<p align="center"><strong>你的知识、记忆与行动，始终在线。</strong></p>
+<p align="center">个人 AI 工作空间 · 知识库问答 · 会议洞察 · 长期记忆 · 办公自动化</p>
+<p align="center">
+  <a href="#界面与功能">界面与功能</a> &nbsp; / &nbsp;
+  <a href="#快速开始">快速开始</a> &nbsp; / &nbsp;
+  <a href="#文档">项目文档</a>
+</p>
+
+<hr />
+<p>Cortex 将对话、资料、记忆与待办连接在一个工作空间中：上传 PDF，带着来源回答问题；导入会议纪要，提炼行动与风险；让重要事实在下一次对话中继续发挥作用。</p>
+<p><strong>Next.js · FastAPI · LangGraph · SQLite · Chroma</strong></p>
+<h2 id="界面与功能">界面与功能</h2>
+<!-- CORTEX_SCREENSHOTS_START -->
+
+<p><img alt="Cortex 工作空间首页" src="截图/办公智能体首页.png" /></p>
+<p align="center"><sub>六个工作区，一个入口。对话、资料与上下文在同一屏中连接。</sub></p>
+
+<details>
+<summary><strong>01 · 对话与联网搜索</strong></summary>
+
+结合搜索结果回答问题，保留参考来源。
+
+![Cortex 01 · 对话与联网搜索](截图/对话-联网查询.png)
+
+</details>
+
+<details>
+<summary><strong>02 · PDF 知识库</strong></summary>
+
+管理文档、查看提取文本，按 PDF 页码与 TXT 段落追溯出处。
+
+![Cortex 02 · PDF 知识库](截图/pdf解析-RAG知识库.png)
+
+</details>
+
+<details>
+<summary><strong>03 · 会议分析</strong></summary>
+
+提炼摘要、决定与行动项，识别需要跟进的风险。
+
+![Cortex 03 · 会议分析](截图/会议纪要-分析风险.png)
+
+</details>
+
+<details>
+<summary><strong>04 · 长期记忆</strong></summary>
+
+保存明确事实，按人物、时间、地点与主题检索。
+
+![Cortex 04 · 长期记忆](截图/长期记忆.png)
+
+</details>
+
+<details>
+<summary><strong>05 · 待办与邮件</strong></summary>
+
+跟进责任人与期限，配置邮箱并发送风险提醒。
+
+![Cortex 05 · 待办与邮件](截图/代办事项-发送邮件.png)
+
+</details>
+
+<details>
+<summary><strong>06 · 演示文稿</strong></summary>
+
+输入主题，生成并下载真实的 PowerPoint 文件。
+
+![Cortex 06 · 演示文稿](截图/PPT生成.png)
+
+</details>
+
+<!-- CORTEX_SCREENSHOTS_END -->
+
+<h2 id="快速开始">快速开始</h2>
+<p>运行环境：<strong>Linux · Python 3.11 · Node.js 24 · Conda</strong>。</p>
+<details>
+<summary><strong>首次使用：安装依赖并准备配置</strong></summary>
+
+在项目根目录执行，无需重新创建前端项目：
+
+
+<pre><code class="language-bash">conda create --prefix ./.conda/ai-brain -c conda-forge python=3.11 nodejs=24 pip -y
+conda activate &quot;$PWD/.conda/ai-brain&quot;
+python -m pip install -r requirements.lock.txt
+cd frontend
+npm ci
+cd ..
+cp -n .env.example .env
+chmod 600 .env
+</code></pre>
+
+
+编辑本地 `.env` 配置聊天模型、Embedding 和搜索服务。聊天与 Embedding 的凭据独立配置，字段说明见 [.env.example](.env.example)。
+
+完整安装步骤与镜像源选择见 [安装书](安装书.md) 和 [服务器迁移说明](服务器迁移安装说明.md)。
+
+</details>
+
+<p>启动工作空间：</p>
+<pre><code class="language-bash">bash scripts/dev.sh
+</code></pre>
+<p>打开 <strong>http://localhost:3000</strong>。首次启动后，在另一终端查看随机登录凭据；登录后必须修改密码：</p>
+<pre><code class="language-bash">cat storage/initial-login.txt
+</code></pre>
+<details>
+<summary>局域网访问与常用命令</summary>
+
+
+<pre><code class="language-bash"># 同一路由器访问：停止旧服务后执行，使用终端打印的地址
+bash scripts/dev.sh lan
+
+# 在服务器终端重置登录账号或密码
+.conda/ai-brain/bin/python scripts/account.py
+
+# 检查配置，不调用外部服务
+.conda/ai-brain/bin/python scripts/check_services.py
+
+# 业务、安全回归测试与前端类型检查
+bash scripts/test.sh
+</code></pre>
+
+
+LAN 模式使用 HTTP，会清空公网 HTTPS Origin，仅适合可信局域网临时访问。按需对局域网放行 `3000/TCP`，不开放后端 `8000`。
+
+邮件在「待办事项 → 邮件设置」配置；支持填写发件邮箱、SMTP 授权码和收件人。
+
+</details>
+
+<h2 id="数据与部署">数据与部署</h2>
+<p>业务记录与文件保存在本机 <code>storage/</code>；启用模型、Embedding、搜索和邮件时，所需内容会发送到对应外部服务，<strong>并非完全离线运行</strong>。</p>
+<p>当前采用单账号、单进程部署，业务 API 与下载接口统一鉴权。<code>.env</code> 和运行数据不提交 Git；本地密钥文件未做磁盘级加密。公网运行需使用生产构建、HTTPS 和入口访问控制，详见 <a href="登录与安全说明.md">登录与安全说明</a>。</p>
+<details>
+<summary>当前使用边界</summary>
+
+- PDF 需要文字层，尚未启用 OCR。
+- 聊天采用最近消息窗口与长度截断，尚未实现自动上下文压缩。
+- 服务重启后，中断的后台任务需要手动重试。
+- 邮件发送给配置的收件人，不自动将责任人名称映射为邮箱。
+- 自动化测试不代替外部服务、浏览器与公网部署验收，模型输出和引用内容仍需核对。
+
+</details>
+
+<h2 id="文档">文档</h2>
+<p><a href="项目架构书.md">项目架构</a> · <a href="开发书.md">开发设计</a> · <a href="安装书.md">环境安装</a> · <a href="服务器迁移安装说明.md">服务器迁移</a> · <a href="登录与安全说明.md">登录与安全</a></p>
+<details>
+<summary>历史 README</summary>
+
+[最初版本](docs/archive/README.before-github.md) · [截图改版前](docs/archive/README.before-gallery.md) · [本次排版前](docs/archive/README.before-layout.md)
+
+</details></article></body></html>

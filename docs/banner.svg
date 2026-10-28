@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-labelledby="title desc">
+<title id="title">Cortex — Your AI Second Brain</title><desc id="desc">Knowledge, memory and action in one private workspace.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101827"/><stop offset="1" stop-color="#282342"/></linearGradient><radialGradient id="glow"><stop stop-color="#9280d5" stop-opacity=".18"/><stop offset="1" stop-color="#9280d5" stop-opacity="0"/></radialGradient></defs>
+<rect width="1280" height="300" rx="22" fill="url(#bg)"/><ellipse cx="1080" cy="150" rx="330" ry="280" fill="url(#glow)"/>
+<g fill="none" stroke="#aa9bda" stroke-width="1.5" opacity=".35"><circle cx="1070" cy="150" r="95"/><circle cx="1070" cy="150" r="65"/><path d="m1004 82 120 17-111 109 125 9-68-132v130L979 150l182 1"/></g>
+<g fill="#b6a8e1"><circle cx="1004" cy="82" r="5"/><circle cx="1124" cy="99" r="6"/><circle cx="1013" cy="208" r="5"/><circle cx="1138" cy="217" r="5"/><circle cx="1070" cy="85" r="4"/><circle cx="979" cy="150" r="4"/><circle cx="1161" cy="151" r="4"/><circle cx="1070" cy="150" r="9"/></g>
+<text x="66" y="72" fill="#b4a7d8" font-family="Arial,sans-serif" font-size="12" letter-spacing="4">YOUR AI SECOND BRAIN</text>
+<text x="62" y="157" fill="#f5f3fc" font-family="Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-3">Cortex</text>
+<text x="66" y="205" fill="#c1c6d7" font-family="Arial,sans-serif" font-size="19">Knowledge. Memory. Action.</text>
+<text x="66" y="249" fill="#8f9ab3" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.2">LOCAL WORKSPACE / CONNECTED INTELLIGENCE</text>
+</svg>
