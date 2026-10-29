@@ -20,6 +20,7 @@ def update(root=ROOT):
     home = available('截图/办公智能体首页.png', 'docs/screenshots/workspace.png')
     if home:
         blocks.append(f'![Cortex 工作空间首页]({home})\n\n<p align="center"><sub>六个工作区，一个入口。对话、资料与上下文在同一屏中连接。</sub></p>')
+    blocks.append('> **📷 点击下方蓝色标题，查看对应的完整界面截图。**')
     for title, caption, paths in (
         ('01 · 对话与联网搜索', '结合搜索结果回答问题，保留参考来源。', ('截图/对话-联网查询.png',)),
         ('02 · PDF 知识库', '管理文档、查看提取文本，按 PDF 页码与 TXT 段落追溯出处。', ('截图/pdf解析-RAG知识库.png', 'docs/screenshots/knowledge.png')),
@@ -31,7 +32,7 @@ def update(root=ROOT):
     ):
         path = available(*paths)
         if path:
-            blocks.append(f'<details>\n<summary><strong>{title}</strong></summary>\n\n{caption}\n\n![Cortex {title}]({path})\n\n</details>')
+            blocks.append(f'### 🔹 [{title}]({path})\n\n{caption}　[查看完整截图 ↗]({path})')
     if not blocks:
         raise SystemExit('尚无真实界面截图，请先添加 PNG 文件。')
     path = root / 'README.md'

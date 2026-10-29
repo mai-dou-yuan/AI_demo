@@ -21,59 +21,31 @@ Cortex 将对话、资料、记忆与待办连接在一个工作空间中：上�
 
 <p align="center"><sub>六个工作区，一个入口。对话、资料与上下文在同一屏中连接。</sub></p>
 
-<details>
-<summary><strong>01 · 对话与联网搜索</strong></summary>
+> **📷 点击下方蓝色标题，查看对应的完整界面截图。**
 
-结合搜索结果回答问题，保留参考来源。
+### 🔹 [01 · 对话与联网搜索](截图/对话-联网查询.png)
 
-![Cortex 01 · 对话与联网搜索](截图/对话-联网查询.png)
+结合搜索结果回答问题，保留参考来源。　[查看完整截图 ↗](截图/对话-联网查询.png)
 
-</details>
+### 🔹 [02 · PDF 知识库](截图/pdf解析-RAG知识库.png)
 
-<details>
-<summary><strong>02 · PDF 知识库</strong></summary>
+管理文档、查看提取文本，按 PDF 页码与 TXT 段落追溯出处。　[查看完整截图 ↗](截图/pdf解析-RAG知识库.png)
 
-管理文档、查看提取文本，按 PDF 页码与 TXT 段落追溯出处。
+### 🔹 [03 · 会议分析](截图/会议纪要-分析风险.png)
 
-![Cortex 02 · PDF 知识库](截图/pdf解析-RAG知识库.png)
+提炼摘要、决定与行动项，识别需要跟进的风险。　[查看完整截图 ↗](截图/会议纪要-分析风险.png)
 
-</details>
+### 🔹 [04 · 长期记忆](截图/长期记忆.png)
 
-<details>
-<summary><strong>03 · 会议分析</strong></summary>
+保存明确事实，按人物、时间、地点与主题检索。　[查看完整截图 ↗](截图/长期记忆.png)
 
-提炼摘要、决定与行动项，识别需要跟进的风险。
+### 🔹 [05 · 待办与邮件](截图/代办事项-发送邮件.png)
 
-![Cortex 03 · 会议分析](截图/会议纪要-分析风险.png)
+跟进责任人与期限，配置邮箱并发送风险提醒。　[查看完整截图 ↗](截图/代办事项-发送邮件.png)
 
-</details>
+### 🔹 [06 · 演示文稿](截图/PPT生成.png)
 
-<details>
-<summary><strong>04 · 长期记忆</strong></summary>
-
-保存明确事实，按人物、时间、地点与主题检索。
-
-![Cortex 04 · 长期记忆](截图/长期记忆.png)
-
-</details>
-
-<details>
-<summary><strong>05 · 待办与邮件</strong></summary>
-
-跟进责任人与期限，配置邮箱并发送风险提醒。
-
-![Cortex 05 · 待办与邮件](截图/代办事项-发送邮件.png)
-
-</details>
-
-<details>
-<summary><strong>06 · 演示文稿</strong></summary>
-
-输入主题，生成并下载真实的 PowerPoint 文件。
-
-![Cortex 06 · 演示文稿](截图/PPT生成.png)
-
-</details>
+输入主题，生成并下载真实的 PowerPoint 文件。　[查看完整截图 ↗](截图/PPT生成.png)
 
 <!-- CORTEX_SCREENSHOTS_END -->
 
@@ -81,8 +53,10 @@ Cortex 将对话、资料、记忆与待办连接在一个工作空间中：上�
 
 运行环境：**Linux · Python 3.11 · Node.js 24 · Conda**。
 
+> **首次安装？点击下方「首次使用」展开完整步骤。已有环境可直接运行启动命令。**
+
 <details>
-<summary><strong>首次使用：安装依赖并准备配置</strong></summary>
+<summary><h3>🔹 首次使用：安装依赖并准备配置　<sub>点击展开步骤</sub></h3></summary>
 
 在项目根目录执行，无需重新创建前端项目：
 
@@ -116,7 +90,7 @@ cat storage/initial-login.txt
 ```
 
 <details>
-<summary>局域网访问与常用命令</summary>
+<summary><strong>🔹 局域网访问与常用命令 · 点击展开</strong></summary>
 
 ```bash
 # 同一路由器访问：停止旧服务后执行，使用终端打印的地址
